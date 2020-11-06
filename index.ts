@@ -1,18 +1,19 @@
 /* eslint-disable no-console */
 import { Server } from '@hapi/hapi';
 
+// eslint-disable-next-line import/prefer-default-export
+export const server = new Server({
+  port: 3001,
+  host: 'localhost',
+});
+
+server.route({
+  method: 'GET',
+  path: '/',
+  handler: () => 'Hello World!',
+});
+
 const init = async () => {
-  const server = new Server({
-    port: 3001,
-    host: 'localhost',
-  });
-
-  server.route({
-    method: 'GET',
-    path: '/',
-    handler: () => 'Hello World!',
-  });
-
   await server.start();
   console.log('Server running on %s', server.info.uri);
 };
