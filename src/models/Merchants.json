@@ -1,0 +1,20 @@
+[ 
+    {
+        "id": "m001",
+        "display_name": "Merchant 1",
+        "icon_url": "http://www.iconurl.com",
+        "funny_gif_url": "http://www.gifurl.com"
+    },
+    {
+        "id": "m002",
+        "display_name": "Merchant 2",
+        "icon_url": "http://www.iconurl2.com",
+        "funny_gif_url": "http://www.gifurl2.com"
+    },
+    {
+        "id": "m003",
+        "display_name": "Merchant 3",
+        "icon_url": "http://www.iconurl3.com",
+        "funny_gif_url": "http://www.gifurl3.com"
+    }
+]

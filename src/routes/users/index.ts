@@ -18,6 +18,19 @@ export default [
           end: Joi.date().optional(),
         }),
       },
+      response: {
+        schema: Joi.object({
+          userId: Joi.string().required(),
+          start: Joi.string().required(),
+          end: Joi.string().optional().allow(null),
+          merchants: Joi.array().items(Joi.object({
+            display_name: Joi.string().required(),
+            icon_url: Joi.string().required(),
+            funny_gif_url: Joi.string().required(),
+            ranking: Joi.number().required(),
+          })),
+        }),
+      },
     },
   },
 ];

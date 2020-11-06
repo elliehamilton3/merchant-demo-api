@@ -1,0 +1,10 @@
+[
+    {
+        "id": "t001",
+        "user_id": "u001",
+        "merchant_id": "m001",
+        "date": "01-01-2020",
+        "amount": 100,
+        "description": "100 sausage rolls"
+    }
+]

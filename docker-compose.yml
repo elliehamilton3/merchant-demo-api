@@ -4,7 +4,7 @@ services:
     image: node:13-alpine
     build: .
     volumes:
-      - ./:/api
+      - .:/api
     ports:
         - "3001:3001"
     working_dir: /api
