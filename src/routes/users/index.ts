@@ -14,8 +14,8 @@ export default [
           userId: Joi.string().regex(/^[. |_a-zA-Z0-9]+$/).required(),
         }),
         query: Joi.object({
-          dateFrom: Joi.date().required(),
-          dateTo: Joi.date().optional(),
+          start: Joi.date().required(),
+          end: Joi.date().optional(),
         }),
       },
     },

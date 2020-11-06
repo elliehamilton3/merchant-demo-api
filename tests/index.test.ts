@@ -16,14 +16,14 @@ afterAll((done) => {
 test('returns an array of merchants for a user', async () => {
   const options = {
     method: 'GET',
-    url: '/users/001/merchant_ranking?dateFrom=01-01-2020',
+    url: '/users/001/merchant_ranking?start=01-01-2020',
   };
   const data = await server.inject(options);
   expect(data.statusCode).toBe(200);
   expect(data.result).toStrictEqual({
     userId: '001',
-    dateFrom: '2019-12-31T11:00:00.000Z',
-    dateTo: null,
+    start: '2019-12-31T11:00:00.000Z',
+    end: null,
     merchants: [{
       display_name: 'Merchant 1',
       icon_url: 'http://www.iconurl.com',
@@ -36,14 +36,14 @@ test('returns an array of merchants for a user', async () => {
 test('returns an array of merchants for a user with a date to in the query', async () => {
   const options = {
     method: 'GET',
-    url: '/users/001/merchant_ranking?dateFrom=01-01-2020&dateTo=01-06-2020',
+    url: '/users/001/merchant_ranking?start=01-01-2020&end=01-06-2020',
   };
   const data = await server.inject(options);
   expect(data.statusCode).toBe(200);
   expect(data.result).toStrictEqual({
     userId: '001',
-    dateFrom: '2019-12-31T11:00:00.000Z',
-    dateTo: '2020-01-05T11:00:00.000Z',
+    start: '2019-12-31T11:00:00.000Z',
+    end: '2020-01-05T11:00:00.000Z',
     merchants: [{
       display_name: 'Merchant 1',
       icon_url: 'http://www.iconurl.com',
