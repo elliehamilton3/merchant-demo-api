@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+      "module": "commonjs",
+      "target": "es6",
+      "noImplicitAny": true,
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "sourceMap": true,
+      "outDir": "dist",
+      "types": [
+        "node",
+        "jest"
+      ],
+      "resolveJsonModule": true,
+      "esModuleInterop": true,
+    },
+    "include": [
+      "src/**/*",
+      "index.ts",
+      "index.test.ts"
+    ],
+    "exclude": [
+      "node_modules",
+      "dist",
+    ]
+  }
