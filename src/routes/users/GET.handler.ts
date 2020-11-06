@@ -3,8 +3,8 @@ import { Request } from '@hapi/hapi';
 export default async function getHandler(request: Request) {
   return {
     userId: request.params.userId,
-    start: request.query.dateFrom.toISOString(),
-    end: !request.query.dateTo ? null : request.query.dateTo.toISOString(),
+    start: request.query.start.toISOString(),
+    end: !request.query.end ? null : request.query.end.toISOString(),
     merchants: [
       {
         display_name: 'Merchant 1',
