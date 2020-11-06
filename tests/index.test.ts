@@ -13,16 +13,6 @@ afterAll((done) => {
   server.stop();
 });
 
-test('returns hello world on the root path', async () => {
-  const options = {
-    method: 'GET',
-    url: '/',
-  };
-  const data = await server.inject(options);
-  expect(data.statusCode).toBe(200);
-  expect(data.result).toBe('Hello World!');
-});
-
 test('returns an array of merchants for a user', async () => {
   const options = {
     method: 'GET',
