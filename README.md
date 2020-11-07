@@ -82,4 +82,4 @@ The next steps/things I would build if I was to continue working on it are:
 - Implementing the SQL database, seeding and connecting it in the docker compose - this would allow for quering the database and a number of optimisations including indexing the database etc.
 - In practice, I would have the SQL database and then run a number of performance and load tests with large volumes of mock (but real looking) data and test various code and SQL query combinations with a tool like [K6](https://k6.io/) or [Artillery](https://artillery.io/) in order to find the one that was the most performant for the way it was being used.
 - Implement proper error handling and responses (especially around data formats and data returning null from lookups) - I would probably take the time to do this once I knew what the most performant query/code combinations were so as to minimise waste.
-
+- Add test coverage thresholds and reports and increase the test coverage
