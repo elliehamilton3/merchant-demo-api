@@ -11,7 +11,7 @@ export function filterAndGroupTransactions(start: Date, end?: Date) {
 
   const filteredTransactions = Transactions
     .filter(({ date }) => {
-      const dateFormatted = moment(date);
+      const dateFormatted = moment(date, 'DD-MM-YYYY');
       return dateFormatted.isSameOrAfter(startDate) && dateFormatted.isSameOrBefore(endDate);
     })
     .reduce((r, o) => {
