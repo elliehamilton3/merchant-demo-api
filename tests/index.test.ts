@@ -52,4 +52,12 @@ describe('GET /users/{userId}/merchant_ranking', () => {
       }],
     });
   });
+  test('returns 404 if invalid user provided', async () => {
+    const options = {
+      method: 'GET',
+      url: '/users/u005/merchant_ranking?start=01-01-2020&end=01-06-2020',
+    };
+    const data = await server.inject(options);
+    expect(data.statusCode).toBe(404);
+  });
 });

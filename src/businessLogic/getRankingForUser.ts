@@ -1,7 +1,9 @@
 import moment from 'moment';
 import Merchants from '../models/Merchants.json';
 import Transactions from '../models/Transactions.json';
+// Todo
 // Add interfaces for types
+// dont get filtered list twice
 
 export function filterAndGroupTransactions(start: Date, end?: Date) {
   const startDate = moment(start);
@@ -30,7 +32,6 @@ export function filterAndGroupTransactions(start: Date, end?: Date) {
 }
 
 export function getRank(userId: string, merchantId: string, start: Date, end: Date) {
-  // dont get twice
   const filteredTransactions = filterAndGroupTransactions(start, end);
   const merchantTransactions = filteredTransactions
     .filter(({ merchant_id }) => merchant_id === merchantId);
