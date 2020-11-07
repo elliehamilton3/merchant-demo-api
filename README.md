@@ -53,7 +53,7 @@ Swagger docs can be found at [http://localhost:3001/documentation](http://localh
 
 ## CI/CD
 
-No CI/CD has been implemented yet
+No CI/CD has been implemented yet and there is no process for branching etc outside of pushing directly to `main`.
 
 ## Deployment
 
