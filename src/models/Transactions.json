@@ -5,7 +5,7 @@
         "merchant_id": "m001",
         "date": "01-01-2020",
         "amount": 50,
-        "description": "100 sausage rolls"
+        "description": "50 sausage rolls"
     },
     {
         "id": "t002",
@@ -21,6 +21,22 @@
         "merchant_id": "m001",
         "date": "01-01-2020",
         "amount": 100,
-        "description": "50 sausage rolls"
+        "description": "100 sausage rolls"
+    },
+    {
+        "id": "t004",
+        "user_id": "u004",
+        "merchant_id": "m001",
+        "date": "01-01-2020",
+        "amount": 20,
+        "description": "20 sausage rolls"
+    },
+    {
+        "id": "t005",
+        "user_id": "u001",
+        "merchant_id": "m002",
+        "date": "01-01-2020",
+        "amount": 50,
+        "description": "50 hot dogs"
     }
 ]
