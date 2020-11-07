@@ -8,11 +8,12 @@ These instructions will get you a copy of the project up and running on your loc
 2. Ensure you have the prerequisites installed (see below)
 3. Run `npm install` from the root
 4. Run `docker-compose up` to start up all of the apps (see [docker-compose.yml](./docker-compose.yml) for ports)
+4. Run `docker-compose down` to stop all of the containers
 
 ### Prerequisites
 
 You need to have these things installed:
-- [Docker](https://www.docker.com/)
+- [Docker/Docker Compose](https://www.docker.com/)
 - [NodeJS](https://nodejs.org/en/)
 
 ## Running the tests
@@ -38,11 +39,15 @@ To run only service tests:
 npm run test:service
 ```
 
+## API Documentation
+
+Swagger docs can be found at [http://localhost:3001/documentation](http://localhost:3001/documentation) when the app is up and running. These document the available endpoints, methods, request and response data formats etc.
+
 ## Built With
 
 * [NodeJS](https://nodejs.org/en/)
 * [TypeScript](https://www.typescriptlang.org/)
-* [Hapi](https://hapi.dev/)
+* [Hapi including Joi and Boom](https://hapi.dev/)
 * [Jest](https://jestjs.io/en/)
 
 ## CI/CD
