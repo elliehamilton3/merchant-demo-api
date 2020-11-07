@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc --outDir ./dist/",
     "start": "node dist/index.js",
-    "start:dev": "nodemon --watch '**/*.ts' --ignore 'src/**/*.test.ts' --exec 'ts-node' index.ts",
+    "start:dev": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.test.ts' --exec 'ts-node' index.ts",
     "test:unit": "jest ./src",
     "test:service": "jest ./tests",
     "test": "npm run test:unit && npm run test:service",

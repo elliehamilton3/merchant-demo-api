@@ -7,8 +7,8 @@ import routes from './src/routes';
 
 // eslint-disable-next-line import/prefer-default-export
 export const server = new Server({
-  port: 3001,
-  host: 'localhost',
+  port: 3000,
+  host: '0.0.0.0',
 });
 
 server.route(routes);

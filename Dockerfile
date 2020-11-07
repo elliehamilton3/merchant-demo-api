@@ -1,18 +1,20 @@
-FROM node:13-alpine
+FROM node:13 AS build
 
-# Create app directory
-ENV NODE_PATH /usr/node_modules
-WORKDIR /usr/node_modules
+WORKDIR /app
+COPY package*.json ./
 
-# Install app dependencies
-COPY package.json .
+RUN npm ci
 
-RUN npm install
+COPY src/ ./src
+COPY tsconfig.json ./
 
-WORKDIR /usr/src/app
+RUN npm run build
 
-# Bundle app source
-COPY . .
+RUN npm ci --production
 
-# Run app
-CMD [ "npm", "start" ]
+FROM alpine:3
+RUN apk add nodejs --no-cache
+WORKDIR /app
+COPY --from=build /app/node_modules /app/node_modules
+COPY --from=build /app/dist /app/
+CMD node index.js

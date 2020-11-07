@@ -1,12 +1,13 @@
 version: "3.7"
 services:
   api:
-    build: .
-    environment:
-      - NODE_ENV=development
+    image: node:13-alpine
     volumes:
-      - .:/usr/src/app
-      - /usr/src/app/node_modules
+      - ./src:/src
+      - ./package.json:/package.json
+      - ./index.ts:/index.ts
+      - ./tsconfig.json:/tsconfig.json
+      - ./node_modules:/node_modules
     ports:
-      - "3001:3001"
-    command: npm run start:dev
+      - "3000:3000"
+    entrypoint: npm run start:dev
