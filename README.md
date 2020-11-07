@@ -42,7 +42,7 @@ npm run test:service
 
 ## API Documentation
 
-Swagger docs can be found at [http://localhost:3001/documentation](http://localhost:3001/documentation) when the app is up and running. These document the available endpoints, methods, request and response data formats etc and can be used to see example request and response data.
+Swagger docs can be found at [http://localhost:3000/documentation](http://localhost:3000/documentation) when the app is up and running. These document the available endpoints, methods, request and response data formats etc and can be used to see example request and response data.
 
 ## Built With
 
