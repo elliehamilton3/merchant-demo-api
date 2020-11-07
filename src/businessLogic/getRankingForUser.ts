@@ -1,9 +1,10 @@
 import moment from 'moment';
 import Merchants from '../models/Merchants.json';
 import Transactions from '../models/Transactions.json';
-// Todo
+// TODO:
 // Add interfaces for types
 // dont get filtered list twice
+// handle if returns non/error
 
 export function filterAndGroupTransactions(start: Date, end?: Date) {
   const startDate = moment(start);

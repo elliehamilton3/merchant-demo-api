@@ -2,7 +2,6 @@ version: "3.7"
 services:
   api:
     image: node:13-alpine
-    build: .
     volumes:
       - .:/api
     ports:

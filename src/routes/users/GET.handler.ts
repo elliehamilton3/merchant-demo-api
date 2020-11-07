@@ -4,7 +4,6 @@ import getRankingForUser from '../../businessLogic/getRankingForUser';
 import Users from '../../models/Users.json';
 
 export default async function getHandler(request: Request) {
-  // handle if returns non/error
   const { userId } = request.params;
   if (!Users.some(({ id }) => id === userId)) return Boom.notFound();
 
