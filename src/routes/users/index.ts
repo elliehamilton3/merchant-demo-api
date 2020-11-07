@@ -8,6 +8,7 @@ export default [
     options: {
       id: 'GET/users/{userId}/merchant_ranking',
       handler: getHandler,
+      tags: ['api'],
       description: 'Returns an array of merchant rankings for a user',
       validate: {
         params: Joi.object({
@@ -25,8 +26,8 @@ export default [
             icon_url: Joi.string().required(),
             funny_gif_url: Joi.string().required(),
             ranking: Joi.number().required(),
-          })),
-        }),
+          }).label('Merchant')).label('Merchants'),
+        }).label('Merchant Rankings'),
       },
     },
   },
