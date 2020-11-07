@@ -1,16 +1,13 @@
 import moment from 'moment';
 import Merchants from '../models/Merchants.json';
+import { Transaction } from '../models/Transaction.interface';
 import Transactions from '../models/Transactions.json';
-// TODO:
-// Add interfaces for types
-// dont get filtered list twice
-// handle if returns non/error
 
 export function filterAndGroupTransactions(start: Date, end?: Date) {
   const startDate = moment(start);
   const endDateOrNow = !end ? new Date() : end;
   const endDate = moment(endDateOrNow);
-  const helper:any = {};
+  const helper: any = {};
 
   const filteredTransactions = Transactions
     .filter(({ date }) => {
@@ -32,8 +29,7 @@ export function filterAndGroupTransactions(start: Date, end?: Date) {
   return filteredTransactions;
 }
 
-export function getRank(userId: string, merchantId: string, start: Date, end: Date) {
-  const filteredTransactions = filterAndGroupTransactions(start, end);
+export function getRank(userId: string, merchantId: string, filteredTransactions: Transaction[]) {
   const merchantTransactions = filteredTransactions
     .filter(({ merchant_id }) => merchant_id === merchantId);
   const index = merchantTransactions
@@ -58,7 +54,7 @@ function getRankingForUser(userId: string, start: Date, end?: Date) {
       display_name,
       icon_url,
       funny_gif_url,
-      ranking: getRank(userId, id, start, end),
+      ranking: getRank(userId, id, filteredTransactions),
     };
   });
 

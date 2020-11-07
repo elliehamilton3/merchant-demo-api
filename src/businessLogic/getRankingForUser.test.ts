@@ -1,4 +1,5 @@
 import getRankingForUser, { getRank, filterAndGroupTransactions } from './getRankingForUser';
+import Transactions from '../models/Transactions.json';
 
 describe('filterAndGroupTransactions', () => {
   test('returns a list of transactions filtered by dates and grouped and end date defaults to now', () => {
@@ -98,15 +99,11 @@ describe('filterAndGroupTransactions', () => {
 
 describe('getRank', () => {
   test('returns the rank for a user for one merchant to 3 dp', () => {
-    const startDate = new Date(2019, 1, 1);
-    const endDate = new Date();
-    const rank = getRank('u001', 'm001', startDate, endDate);
-    expect(rank).toBe(0.5);
+    const rank = getRank('u001', 'm001', Transactions);
+    expect(rank).toBe(0.571);
   });
   test('returns the rank for a user for a different merchant 3 dp', () => {
-    const startDate = new Date(2019, 1, 1);
-    const endDate = new Date();
-    const rank = getRank('u001', 'm002', startDate, endDate);
+    const rank = getRank('u001', 'm002', Transactions);
     expect(rank).toBe(1);
   });
 });
