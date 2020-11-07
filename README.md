@@ -9,6 +9,7 @@ These instructions will get you a copy of the project up and running on your loc
 3. Run `npm install`
 4. Run `docker-compose up` to start up the app (see [docker-compose.yml](./docker-compose.yml) for port)
 4. Run `docker-compose down` to stop all of the containers
+5. Run `npm run build` if you want to compile the typescript to javascript and then you can run `npm run start`
 
 ### Prerequisites
 
